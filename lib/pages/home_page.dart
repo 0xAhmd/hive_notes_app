@@ -15,7 +15,35 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.white,
         shape: const CircleBorder(),
         child: const Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                    title: const Text('Add Note'),
+                    content: const TextField(
+                      decoration: InputDecoration(
+                        label: Text('note'),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                        ),
+                      ),
+                    ),
+                    actions: [
+                      TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text('Cancel')),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text('Save')),
+                    ],
+                  ));
+        },
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

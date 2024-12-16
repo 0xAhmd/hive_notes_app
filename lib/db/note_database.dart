@@ -1,8 +1,8 @@
 import 'package:hive/hive.dart';
 import 'package:minimial_notes_app_hive/models/note_model.dart';
 
-class TodoDatabase {
-  TodoDatabase() {
+class NoteDataBase {
+  NoteDataBase() {
     _initialize();
   }
 
