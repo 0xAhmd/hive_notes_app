@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:minimial_notes_app_hive/pages/setteings_page.dart';
 import 'package:minimial_notes_app_hive/widgets/drawer_list_tile.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -19,15 +20,23 @@ class AppDrawer extends StatelessWidget {
                 width: 70,
               ),
             ),
-            DrawerListTile(
-              onPressed: () {},
-              title: "N O T E S",
-              icon: Icons.edit,
+            GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: const DrawerListTile(
+                title: "N O T E S",
+                icon: Icons.edit,
+              ),
             ),
-            DrawerListTile(
-              onPressed: () {},
-              title: "S E T T I N G S",
-              icon: Icons.settings,
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, SetteingsPage.id);
+              },
+              child: const DrawerListTile(
+                title: "S E T T I N G S",
+                icon: Icons.settings,
+              ),
             ),
           ],
         ),
